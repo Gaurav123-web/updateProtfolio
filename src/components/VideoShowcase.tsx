@@ -143,23 +143,24 @@ export default function VideoShowcase() {
             <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-[#5eead4]/40 rounded-tr-lg pointer-events-none z-10" />
             <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-[#5eead4]/40 rounded-bl-lg pointer-events-none z-10" />
             <div className="absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-[#5eead4]/40 rounded-br-lg pointer-events-none z-10" />
-          </div>
 
-          {/* Nav arrows */}
-          <button
-            onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-20 opacity-0 group-hover:opacity-100"
-            aria-label="Previous"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-20 opacity-0 group-hover:opacity-100"
-            aria-label="Next"
-          >
-            <ChevronRight size={18} />
-          </button>
+            {/* Back arrow — left side */}
+            <button
+              onClick={prev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-30"
+              aria-label="Previous"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            {/* Forward arrow — right side */}
+            <button
+              onClick={next}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-30"
+              aria-label="Next"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </motion.div>
 
         {/* Controls row */}
