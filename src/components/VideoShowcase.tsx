@@ -67,7 +67,7 @@ export default function VideoShowcase() {
 
   return (
     <section id="showcase" ref={ref} className="relative py-28 px-6 bg-[#0a0d14]/50">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -94,27 +94,27 @@ export default function VideoShowcase() {
           onMouseLeave={() => setPaused(false)}
         >
           {/* Slide area */}
-          <div className="relative rounded-2xl overflow-hidden aspect-video bg-[#05060a]">
+          <div className="relative rounded-2xl overflow-hidden bg-[#05060a] flex items-center justify-center" style={{ height: 'clamp(220px, 45vw, 400px)' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 1.05 }}
+                initial={{ opacity: 0, scale: 1.03 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0"
+                className="absolute inset-0 flex items-center justify-center p-4"
               >
                 {current.type === 'image' ? (
                   <img
                     src={current.src}
                     alt={current.caption}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full object-contain rounded-lg"
                   />
                 ) : (
                   <video
                     ref={videoRef}
                     src={current.src}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full object-contain rounded-lg"
                     preload="metadata"
                     playsInline
                     muted
@@ -127,38 +127,38 @@ export default function VideoShowcase() {
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#05060a]/90 to-transparent pointer-events-none" />
 
             {/* Caption */}
-            <div className="absolute bottom-4 left-5 right-5 flex items-center gap-2">
-              <span className="px-2.5 py-1 rounded-full bg-[#5eead4]/15 backdrop-blur-sm flex items-center gap-1.5 text-xs text-[#5eead4] font-mono">
-                {current.type === 'image' ? <ImageIcon size={11} /> : <Video size={11} />}
+            <div className="absolute bottom-3 left-4 right-4 flex items-center gap-2 z-10">
+              <span className="px-2 py-1 rounded-full bg-[#5eead4]/15 backdrop-blur-sm flex items-center gap-1.5 text-xs text-[#5eead4] font-mono shrink-0">
+                {current.type === 'image' ? <ImageIcon size={10} /> : <Video size={10} />}
                 {current.type}
               </span>
-              <span className="text-sm text-white/90 truncate">{current.caption}</span>
+              <span className="text-xs sm:text-sm text-white/90 truncate">{current.caption}</span>
             </div>
 
             {/* Frame border */}
             <div className="absolute inset-0 pointer-events-none border border-[#5eead4]/10 rounded-2xl" />
 
             {/* Corner accents */}
-            <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#5eead4]/40 rounded-tl-lg pointer-events-none" />
-            <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#5eead4]/40 rounded-tr-lg pointer-events-none" />
-            <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#5eead4]/40 rounded-bl-lg pointer-events-none" />
-            <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#5eead4]/40 rounded-br-lg pointer-events-none" />
+            <div className="absolute top-3 left-3 w-5 h-5 border-t-2 border-l-2 border-[#5eead4]/40 rounded-tl-lg pointer-events-none z-10" />
+            <div className="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-[#5eead4]/40 rounded-tr-lg pointer-events-none z-10" />
+            <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-[#5eead4]/40 rounded-bl-lg pointer-events-none z-10" />
+            <div className="absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-[#5eead4]/40 rounded-br-lg pointer-events-none z-10" />
           </div>
 
           {/* Nav arrows */}
           <button
             onClick={prev}
-            className="absolute left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-10 opacity-0 group-hover:opacity-100"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-20 opacity-0 group-hover:opacity-100"
             aria-label="Previous"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={18} />
           </button>
           <button
             onClick={next}
-            className="absolute right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-10 opacity-0 group-hover:opacity-100"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass-sheen flex items-center justify-center text-white hover:bg-[#5eead4] hover:text-[#05060a] transition-all duration-300 z-20 opacity-0 group-hover:opacity-100"
             aria-label="Next"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={18} />
           </button>
         </motion.div>
 
