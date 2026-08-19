@@ -246,3 +246,34 @@ export const recommendations = [
   { name: 'Dr. Bhavana Prasher', email: 'bhavana.p@igib.res.in', org: 'CSIR–Institute of Genomics and Integrative Biology, New Delhi' },
   { name: 'Dr. Sudipta Tung', email: 'sudipta.tung@ashoka.edu.in', org: 'Ashoka University, Haryana' },
 ];
+
+export const testimonials = [
+  {
+    name: 'Dr. Bhavana Prasher',
+    role: 'Senior Scientist, CSIR–IGIB',
+    image: '/testimonials/pic1.jpeg',
+    quote:
+      'Pundalik demonstrated remarkable rigor in his master\'s thesis work on gut microbiome dysbiosis. His ability to bridge molecular biology with computational analysis is exceptional for an early-career researcher.',
+  },
+  {
+    name: 'Dr. Sudipta Tung',
+    role: 'Principal Investigator, Ashoka University',
+    image: '/testimonials/pic2.jpeg',
+    quote:
+      'A dedicated and thoughtful researcher. Pundalik brings both technical precision and genuine scientific curiosity to every project — from fieldwork to bioinformatics pipelines.',
+  },
+  {
+    name: 'Lab Colleague',
+    role: 'Research Collaborator, Ashoka University',
+    image: '/testimonials/pic3.jpeg',
+    quote:
+      'As lab manager, Pundalik elevated our research workflows and trained students with patience and clarity. His SOPs and documentation practices set a new standard for the lab.',
+  },
+  {
+    name: 'Project Mentor',
+    role: 'Bioinformatics Supervisor',
+    image: '/testimonials/pic4.jpeg',
+    quote:
+      'Pundalik\'s reproducible computational workflows and careful statistical analysis made a real difference in our transcriptomics project. He thinks critically about biological questions.',
+  },
+];

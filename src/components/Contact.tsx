@@ -22,7 +22,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-mono text-sm text-[#5eead4] mb-2">06 / Contact</p>
+          <p className="font-mono text-sm text-[#5eead4] mb-2">08 / Contact</p>
           <h2 className="text-4xl md:text-6xl font-bold">
             Let's advance <span className="gradient-text-animated">science</span> together
           </h2>

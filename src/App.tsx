@@ -5,6 +5,8 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Publications from '@/components/Publications';
+import VideoShowcase from '@/components/VideoShowcase';
+import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import SkillsMarquee from '@/components/SkillsMarquee';
@@ -27,6 +29,8 @@ function App() {
         <Projects />
         <Skills />
         <Publications />
+        <VideoShowcase />
+        <Testimonials />
         <Contact />
         <Footer />
       </div>
